@@ -1,7 +1,44 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>My Timeline</title>
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <style>
+      /* Optional custom CSS goes here */
+      /* All events tagged with 'fruit' */
+.tl-slide[data-tag~="fruit"] {
+  background-color: rgba(255, 165, 0, 0.1); /* light orange */
+  border-left: 5px solid #FFA500;
+}
+
+/* All events tagged with 'soul' */
+.tl-slide[data-tag~="soul"] {
+  background-color: rgba(128, 0, 128, 0.08); /* light purple */
+  border-left: 5px solid #800080;
+}
+
+/* All events tagged with 'memory' */
+.tl-slide[data-tag~="memory"] {
+  background-color: rgba(0, 120, 200, 0.1); /* light blue */
+  border-left: 5px solid #0078C8;
+    </style>
+  </head>
+  <body>
+    <div id="timeline-embed" style="width: 100%; height: 600px"></div>
+    <script type="text/javascript">
+      var options = {
+        start_at_slide: 0,
+        language: 'en',
+        height: 600
+      };
+
+      window.timeline = new TL.Timeline(
+        'timeline-embed',
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOXS2fYsY9vYnD2aHdC97sIQL13XQUXG1DgV0vIQgLQROkI0XZ_VxygbGdhcF0H3LDiccERafrFvNg/pubhtml',
+        options
+      );
+    </script>
+  </body>
 </html>
